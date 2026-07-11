@@ -1,0 +1,675 @@
+2026-07-10 09:47:22 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-10 09:48:50 [WARNING] app.exceptions (exceptions.py:58) - HTTPException: Not Found | URL: http://127.0.0.1:8000/api/not-exist | Status: 404
+2026-07-10 09:48:50 [INFO] app.api.candidates (candidates.py:40) - Listing all candidates
+2026-07-10 09:49:00 [WARNING] app.exceptions (exceptions.py:58) - HTTPException: Not Found | URL: http://127.0.0.1:8000/api/not-exist | Status: 404
+2026-07-10 09:49:07 [INFO] app.api.candidates (candidates.py:16) - Received resume upload request for Candidate: Alice Smith, File: test_resume.pdf
+2026-07-10 09:49:07 [INFO] app.file_helper (file_helper.py:48) - Saving uploaded file 'test_resume.pdf' to './uploads\resumes\52d8386c-4e55-40e5-99a5-3b47950bf3f7.pdf'
+2026-07-10 09:55:52 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-10 10:23:42 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-10 10:23:42 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-10 10:24:13 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-10 10:24:13 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-10 10:25:10 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-10 10:25:10 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-10 10:25:30 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-10 10:25:30 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-10 20:38:17 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-10 20:38:18 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-10 20:38:26 [INFO] app.api.candidates (candidates.py:23) - Received resume upload request for Candidate: Alice Smith, File: sample_resume.pdf
+2026-07-10 20:38:26 [INFO] app.file_helper (file_helper.py:48) - Saving uploaded file 'sample_resume.pdf' to './uploads\resumes\1c585198-0d42-4069-8c30-b006156c2703.pdf'
+2026-07-10 20:38:26 [INFO] app.services.resume_parser (resume_parser.py:16) - Extracting text from PDF: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\uploads\resumes\1c585198-0d42-4069-8c30-b006156c2703.pdf
+2026-07-10 20:38:26 [ERROR] app.services.resume_parser (resume_parser.py:24) - Error reading PDF file 'C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\uploads\resumes\1c585198-0d42-4069-8c30-b006156c2703.pdf': Cannot open empty file: filename='C:\\Users\\kodal\\OneDrive\\Desktop\\btech-project\\Interview\\backend\\uploads\\resumes\\1c585198-0d42-4069-8c30-b006156c2703.pdf'.
+Traceback (most recent call last):
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 19, in extract_text_from_pdf
+    with fitz.open(file_path) as doc:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymupdf\__init__.py", line 3005, in __init__
+    raise EmptyFileError(f'Cannot open empty file: {filename=}.')
+pymupdf.EmptyFileError: Cannot open empty file: filename='C:\\Users\\kodal\\OneDrive\\Desktop\\btech-project\\Interview\\backend\\uploads\\resumes\\1c585198-0d42-4069-8c30-b006156c2703.pdf'.
+2026-07-10 20:38:26 [ERROR] app.services.resume_parser (resume_parser.py:140) - Error parsing resume 'C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\uploads\resumes\1c585198-0d42-4069-8c30-b006156c2703.pdf': Cannot open empty file: filename='C:\\Users\\kodal\\OneDrive\\Desktop\\btech-project\\Interview\\backend\\uploads\\resumes\\1c585198-0d42-4069-8c30-b006156c2703.pdf'.. Reverting to fallback.
+Traceback (most recent call last):
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 96, in parse_resume
+    raw_text = extract_text(file_path)
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 49, in extract_text
+    return extract_text_from_pdf(file_path)
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 25, in extract_text_from_pdf
+    raise e
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 19, in extract_text_from_pdf
+    with fitz.open(file_path) as doc:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymupdf\__init__.py", line 3005, in __init__
+    raise EmptyFileError(f'Cannot open empty file: {filename=}.')
+pymupdf.EmptyFileError: Cannot open empty file: filename='C:\\Users\\kodal\\OneDrive\\Desktop\\btech-project\\Interview\\backend\\uploads\\resumes\\1c585198-0d42-4069-8c30-b006156c2703.pdf'.
+2026-07-10 20:38:26 [INFO] app.services.resume_parser (resume_parser.py:59) - Running offline regex parser fallback...
+2026-07-10 20:38:27 [INFO] app.api.candidates (candidates.py:74) - Successfully saved candidate and resume record to DB. Candidate ID: 1
+2026-07-10 20:40:58 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-10 20:40:59 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-10 20:41:16 [INFO] app.api.jobs (jobs.py:22) - Received Job Description upload request for Role: Senior Full Stack Developer, File: sample_jd.pdf
+2026-07-10 20:41:16 [INFO] app.file_helper (file_helper.py:48) - Saving uploaded file 'sample_jd.pdf' to './uploads\jds\0cbb97f1-373c-4fcc-898a-e2fbc06b2c8a.pdf'
+2026-07-10 20:41:16 [INFO] app.services.resume_parser (resume_parser.py:16) - Extracting text from PDF: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\uploads\jds\0cbb97f1-373c-4fcc-898a-e2fbc06b2c8a.pdf
+2026-07-10 20:41:16 [ERROR] app.services.resume_parser (resume_parser.py:24) - Error reading PDF file 'C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\uploads\jds\0cbb97f1-373c-4fcc-898a-e2fbc06b2c8a.pdf': Cannot open empty file: filename='C:\\Users\\kodal\\OneDrive\\Desktop\\btech-project\\Interview\\backend\\uploads\\jds\\0cbb97f1-373c-4fcc-898a-e2fbc06b2c8a.pdf'.
+Traceback (most recent call last):
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 19, in extract_text_from_pdf
+    with fitz.open(file_path) as doc:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymupdf\__init__.py", line 3005, in __init__
+    raise EmptyFileError(f'Cannot open empty file: {filename=}.')
+pymupdf.EmptyFileError: Cannot open empty file: filename='C:\\Users\\kodal\\OneDrive\\Desktop\\btech-project\\Interview\\backend\\uploads\\jds\\0cbb97f1-373c-4fcc-898a-e2fbc06b2c8a.pdf'.
+2026-07-10 20:41:16 [ERROR] app.services.jd_parser (jd_parser.py:88) - Error parsing Job Description 'C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\uploads\jds\0cbb97f1-373c-4fcc-898a-e2fbc06b2c8a.pdf': Cannot open empty file: filename='C:\\Users\\kodal\\OneDrive\\Desktop\\btech-project\\Interview\\backend\\uploads\\jds\\0cbb97f1-373c-4fcc-898a-e2fbc06b2c8a.pdf'.. Reverting to fallback.
+Traceback (most recent call last):
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\jd_parser.py", line 46, in parse_jd
+    raw_text = extract_text(file_path)
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 49, in extract_text
+    return extract_text_from_pdf(file_path)
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 25, in extract_text_from_pdf
+    raise e
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 19, in extract_text_from_pdf
+    with fitz.open(file_path) as doc:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymupdf\__init__.py", line 3005, in __init__
+    raise EmptyFileError(f'Cannot open empty file: {filename=}.')
+pymupdf.EmptyFileError: Cannot open empty file: filename='C:\\Users\\kodal\\OneDrive\\Desktop\\btech-project\\Interview\\backend\\uploads\\jds\\0cbb97f1-373c-4fcc-898a-e2fbc06b2c8a.pdf'.
+2026-07-10 20:41:16 [INFO] app.services.jd_parser (jd_parser.py:15) - Running offline JD regex parser fallback...
+2026-07-10 20:41:16 [INFO] app.api.jobs (jobs.py:54) - Successfully saved Job Description record to DB. Job ID: 1
+2026-07-10 20:41:16 [INFO] app.api.interviews (interviews.py:23) - Creating database interview session. Candidate ID: 1, Job ID: 1
+2026-07-10 20:41:16 [INFO] app.api.interviews (interviews.py:48) - Successfully created interview record in DB. Interview ID: 1
+2026-07-10 20:43:32 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-10 20:43:32 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-10 20:43:36 [INFO] app.api.interviews (interviews.py:188) - Retrieving interview details for ID: 1
+2026-07-10 20:43:36 [INFO] app.api.interviews (interviews.py:76) - Received audio upload request for Interview: 1, File: dummy_audio.webm
+2026-07-10 20:43:36 [INFO] app.file_helper (file_helper.py:48) - Saving uploaded file 'dummy_audio.webm' to './uploads\audio\831c3d55-6604-4a77-9354-f72669b5c213.webm'
+2026-07-10 20:43:36 [INFO] app.api.interviews (interviews.py:94) - Successfully updated audio path for Interview ID 1
+2026-07-10 20:43:36 [INFO] app.api.interviews (interviews.py:188) - Retrieving interview details for ID: 1
+2026-07-10 20:43:36 [INFO] app.api.interviews (interviews.py:128) - Triggered transcription for Interview: 1
+2026-07-10 20:43:36 [INFO] app.api.interviews (interviews.py:110) - [Background] Starting mock transcription for Interview: 1
+2026-07-10 20:43:36 [INFO] app.api.interviews (interviews.py:112) - [Background] Completed mock transcription for Interview: 1
+2026-07-10 20:45:54 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-10 20:45:54 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-10 20:45:58 [INFO] app.api.interviews (interviews.py:168) - Triggered transcription for Interview: 1
+2026-07-10 20:45:58 [INFO] app.api.interviews (interviews.py:116) - [Background] Starting transcription pipeline for Interview ID: 1
+2026-07-10 20:45:58 [INFO] app.services.whisper_service (whisper_service.py:13) - Transcribing audio file: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\uploads\audio\831c3d55-6604-4a77-9354-f72669b5c213.webm
+2026-07-10 20:45:58 [WARNING] app.services.whisper_service (whisper_service.py:21) - OPENAI_API_KEY environment variable is empty. Utilizing offline mock transcription fallback.
+2026-07-10 20:45:58 [INFO] app.api.interviews (interviews.py:146) - [Background] Successfully completed transcription for Interview ID: 1
+2026-07-10 20:46:02 [INFO] app.api.interviews (interviews.py:228) - Retrieving interview details for ID: 1
+2026-07-10 20:47:25 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-10 20:47:26 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-10 20:47:30 [INFO] app.api.interviews (interviews.py:174) - Triggered transcription for Interview: 1
+2026-07-10 20:47:30 [INFO] app.api.interviews (interviews.py:117) - [Background] Starting transcription pipeline for Interview ID: 1
+2026-07-10 20:47:30 [INFO] app.services.whisper_service (whisper_service.py:13) - Transcribing audio file: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\uploads\audio\831c3d55-6604-4a77-9354-f72669b5c213.webm
+2026-07-10 20:47:30 [WARNING] app.services.whisper_service (whisper_service.py:21) - OPENAI_API_KEY environment variable is empty. Utilizing offline mock transcription fallback.
+2026-07-10 20:47:30 [INFO] app.services.diarization_service (diarization_service.py:11) - Initializing text speaker diarization parser...
+2026-07-10 20:47:30 [INFO] app.services.diarization_service (diarization_service.py:66) - Diarization complete. Generated 4 dialogue segments.
+2026-07-10 20:47:30 [INFO] app.api.interviews (interviews.py:152) - [Background] Successfully completed transcription for Interview ID: 1
+2026-07-10 20:47:34 [INFO] app.api.interviews (interviews.py:234) - Retrieving interview details for ID: 1
+2026-07-10 20:51:35 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-10 20:51:36 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-10 20:51:41 [INFO] app.api.interviews (interviews.py:269) - Triggered analysis for Interview: 1
+2026-07-10 20:51:41 [INFO] app.api.interviews (interviews.py:167) - [Background] Starting evaluation report pipeline for Interview ID: 1
+2026-07-10 20:51:41 [INFO] app.services.report_generator (report_generator.py:14) - Initializing candidate interview evaluation analysis...
+2026-07-10 20:51:41 [WARNING] app.services.report_generator (report_generator.py:18) - OPENAI_API_KEY environment variable is empty. Utilizing offline mock evaluation report fallback.
+2026-07-10 20:51:41 [ERROR] app.api.interviews (interviews.py:224) - [Background] Exception occurred in evaluation report task for ID 1: 'summary' is an invalid keyword argument for Report
+Traceback (most recent call last):
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\api\interviews.py", line 208, in run_analysis_task
+    report = Report(
+        interview_id=interview_id,
+    ...<3 lines>...
+        weaknesses=report_payload.get("weaknesses", [])
+    )
+  File "<string>", line 4, in __init__
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\sqlalchemy\orm\state.py", line 596, in _initialize_instance
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\sqlalchemy\orm\state.py", line 594, in _initialize_instance
+    manager.original_init(*mixed[1:], **kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\sqlalchemy\orm\decl_base.py", line 2179, in _declarative_constructor
+    raise TypeError(
+        "%r is an invalid keyword argument for %s" % (k, cls_.__name__)
+    )
+TypeError: 'summary' is an invalid keyword argument for Report
+2026-07-10 20:52:29 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-10 20:52:29 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-10 20:52:33 [INFO] app.api.interviews (interviews.py:269) - Triggered analysis for Interview: 1
+2026-07-10 20:52:34 [INFO] app.api.interviews (interviews.py:167) - [Background] Starting evaluation report pipeline for Interview ID: 1
+2026-07-10 20:52:34 [INFO] app.services.report_generator (report_generator.py:14) - Initializing candidate interview evaluation analysis...
+2026-07-10 20:52:34 [WARNING] app.services.report_generator (report_generator.py:18) - OPENAI_API_KEY environment variable is empty. Utilizing offline mock evaluation report fallback.
+2026-07-10 20:52:34 [INFO] app.api.interviews (interviews.py:220) - [Background] Successfully completed evaluation report for Interview ID: 1
+2026-07-10 20:56:32 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-10 20:56:33 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-10 20:56:36 [INFO] app.api.interviews (interviews.py:255) - Triggered transcription for Interview: 1
+2026-07-10 20:56:36 [INFO] app.api.interviews (interviews.py:121) - [Background] Starting transcription pipeline for Interview ID: 1
+2026-07-10 20:56:36 [INFO] app.services.whisper_service (whisper_service.py:13) - Transcribing audio file: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\uploads\audio\831c3d55-6604-4a77-9354-f72669b5c213.webm
+2026-07-10 20:56:36 [WARNING] app.services.whisper_service (whisper_service.py:21) - OPENAI_API_KEY environment variable is empty. Utilizing offline mock transcription fallback.
+2026-07-10 20:56:36 [INFO] app.services.diarization_service (diarization_service.py:11) - Initializing text speaker diarization parser...
+2026-07-10 20:56:36 [INFO] app.services.diarization_service (diarization_service.py:66) - Diarization complete. Generated 4 dialogue segments.
+2026-07-10 20:56:36 [INFO] app.services.qa_extractor (qa_extractor.py:14) - Initializing Question-Answer extraction analysis...
+2026-07-10 20:56:36 [WARNING] app.services.qa_extractor (qa_extractor.py:22) - OPENAI_API_KEY environment variable is empty. Utilizing offline mock QA extraction fallback.
+2026-07-10 20:56:36 [ERROR] app.api.interviews (interviews.py:176) - [Background] Exception occurred in Whisper transcription pipeline for ID 1: 'score' is an invalid keyword argument for QuestionAnswer
+Traceback (most recent call last):
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\api\interviews.py", line 159, in run_transcription_task
+    db_qa = QuestionAnswer(
+        interview_id=interview_id,
+    ...<4 lines>...
+        feedback=qa.get("feedback")
+    )
+  File "<string>", line 4, in __init__
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\sqlalchemy\orm\state.py", line 596, in _initialize_instance
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\sqlalchemy\orm\state.py", line 594, in _initialize_instance
+    manager.original_init(*mixed[1:], **kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\sqlalchemy\orm\decl_base.py", line 2179, in _declarative_constructor
+    raise TypeError(
+        "%r is an invalid keyword argument for %s" % (k, cls_.__name__)
+    )
+TypeError: 'score' is an invalid keyword argument for QuestionAnswer
+2026-07-10 20:57:06 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-10 20:57:07 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-10 20:57:12 [INFO] app.api.interviews (interviews.py:255) - Triggered transcription for Interview: 1
+2026-07-10 20:57:12 [INFO] app.api.interviews (interviews.py:121) - [Background] Starting transcription pipeline for Interview ID: 1
+2026-07-10 20:57:12 [INFO] app.services.whisper_service (whisper_service.py:13) - Transcribing audio file: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\uploads\audio\831c3d55-6604-4a77-9354-f72669b5c213.webm
+2026-07-10 20:57:12 [WARNING] app.services.whisper_service (whisper_service.py:21) - OPENAI_API_KEY environment variable is empty. Utilizing offline mock transcription fallback.
+2026-07-10 20:57:12 [INFO] app.services.diarization_service (diarization_service.py:11) - Initializing text speaker diarization parser...
+2026-07-10 20:57:12 [INFO] app.services.diarization_service (diarization_service.py:66) - Diarization complete. Generated 4 dialogue segments.
+2026-07-10 20:57:12 [INFO] app.services.qa_extractor (qa_extractor.py:14) - Initializing Question-Answer extraction analysis...
+2026-07-10 20:57:12 [WARNING] app.services.qa_extractor (qa_extractor.py:22) - OPENAI_API_KEY environment variable is empty. Utilizing offline mock QA extraction fallback.
+2026-07-10 20:57:12 [INFO] app.api.interviews (interviews.py:172) - [Background] Successfully completed transcription for Interview ID: 1
+2026-07-10 21:06:51 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-10 21:06:52 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-10 21:07:46 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-10 21:07:46 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-10 21:07:51 [INFO] app.api.reports (reports.py:142) - Report download requested for Report ID: 1
+2026-07-10 21:11:27 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-10 21:11:27 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-10 21:11:32 [INFO] app.api.interviews (interviews.py:293) - Triggered analysis for Interview: 1
+2026-07-10 21:11:32 [INFO] app.api.interviews (interviews.py:185) - [Background] Starting evaluation report pipeline for Interview ID: 1
+2026-07-10 21:11:32 [INFO] app.services.report_generator (report_generator.py:14) - Initializing candidate interview evaluation analysis...
+2026-07-10 21:11:32 [WARNING] app.services.report_generator (report_generator.py:18) - OPENAI_API_KEY environment variable is empty. Utilizing offline mock evaluation report fallback.
+2026-07-10 21:11:32 [INFO] app.api.interviews (interviews.py:244) - [Background] Successfully completed evaluation report for Interview ID: 1
+2026-07-10 21:11:45 [INFO] app.api.reports (reports.py:148) - Report download requested for Report ID: 1
+2026-07-10 22:12:48 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-10 22:12:48 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-10 22:12:50 [WARNING] app.exceptions (exceptions.py:58) - HTTPException: Method Not Allowed | URL: http://testserver/api/candidates | Status: 405
+2026-07-10 22:12:50 [INFO] httpx (_client.py:1025) - HTTP Request: POST http://testserver/api/candidates "HTTP/1.1 405 Method Not Allowed"
+2026-07-10 22:12:50 [WARNING] app.exceptions (exceptions.py:58) - HTTPException: Method Not Allowed | URL: http://testserver/api/candidates | Status: 405
+2026-07-10 22:12:50 [INFO] httpx (_client.py:1025) - HTTP Request: POST http://testserver/api/candidates "HTTP/1.1 405 Method Not Allowed"
+2026-07-10 22:12:50 [INFO] app.api.candidates (candidates.py:102) - Listing all database candidates
+2026-07-10 22:12:50 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/candidates "HTTP/1.1 200 OK"
+2026-07-10 22:12:50 [WARNING] app.exceptions (exceptions.py:74) - Validation Error | URL: http://testserver/api/candidates/upload-resume | Details: [{'type': 'missing', 'loc': ('body', 'name'), 'msg': 'Field required', 'input': None}]
+2026-07-10 22:12:50 [INFO] httpx (_client.py:1025) - HTTP Request: POST http://testserver/api/candidates/upload-resume "HTTP/1.1 422 Unprocessable Entity"
+2026-07-10 22:12:50 [INFO] app.api.interviews (interviews.py:30) - Creating database interview session. Candidate ID: 1, Job ID: 1
+2026-07-10 22:12:50 [INFO] app.api.interviews (interviews.py:55) - Successfully created interview record in DB. Interview ID: 1
+2026-07-10 22:12:50 [INFO] httpx (_client.py:1025) - HTTP Request: POST http://testserver/api/interviews/create "HTTP/1.1 200 OK"
+2026-07-10 22:12:50 [INFO] app.api.interviews (interviews.py:353) - Retrieving all interview sessions list
+2026-07-10 22:12:50 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/interviews "HTTP/1.1 200 OK"
+2026-07-10 22:12:50 [INFO] app.api.interviews (interviews.py:395) - Retrieving interview details for ID: 1
+2026-07-10 22:12:50 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/interviews/1 "HTTP/1.1 200 OK"
+2026-07-10 22:12:50 [INFO] app.api.interviews (interviews.py:321) - Computing interview dashboard statistics
+2026-07-10 22:12:50 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/interviews/stats "HTTP/1.1 200 OK"
+2026-07-10 22:12:50 [INFO] app.api.reports (reports.py:54) - Retrieving database report for Interview ID: 1
+2026-07-10 22:12:50 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/reports/interview/1 "HTTP/1.1 200 OK"
+2026-07-10 22:12:50 [INFO] app.api.reports (reports.py:101) - Retrieving database report for Report ID: 1
+2026-07-10 22:12:50 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/reports/1 "HTTP/1.1 200 OK"
+2026-07-10 22:12:50 [INFO] app.api.reports (reports.py:148) - Report download requested for Report ID: 1
+2026-07-10 22:12:50 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/reports/1/download "HTTP/1.1 200 OK"
+2026-07-10 22:13:24 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-10 22:13:24 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-10 22:13:25 [INFO] app.api.candidates (candidates.py:102) - Listing all database candidates
+2026-07-10 22:13:25 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/candidates "HTTP/1.1 200 OK"
+2026-07-10 22:13:25 [INFO] app.api.candidates (candidates.py:125) - Retrieving candidate details for ID: 1
+2026-07-10 22:13:25 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/candidates/1 "HTTP/1.1 200 OK"
+2026-07-10 22:13:25 [INFO] app.api.candidates (candidates.py:23) - Received resume upload request for Candidate: Alice Developer, File: resume.pdf
+2026-07-10 22:13:25 [INFO] app.file_helper (file_helper.py:48) - Saving uploaded file 'resume.pdf' to './uploads\resumes\e416126d-91ac-4dce-8b2d-f56361a56a0a.pdf'
+2026-07-10 22:13:25 [INFO] app.services.resume_parser (resume_parser.py:16) - Extracting text from PDF: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\uploads\resumes\e416126d-91ac-4dce-8b2d-f56361a56a0a.pdf
+2026-07-10 22:13:25 [ERROR] app.services.resume_parser (resume_parser.py:24) - Error reading PDF file 'C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\uploads\resumes\e416126d-91ac-4dce-8b2d-f56361a56a0a.pdf': Failed to open file 'C:\\Users\\kodal\\OneDrive\\Desktop\\btech-project\\Interview\\backend\\uploads\\resumes\\e416126d-91ac-4dce-8b2d-f56361a56a0a.pdf' as type pdf.
+Traceback (most recent call last):
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymupdf\__init__.py", line 3013, in __init__
+    doc = mupdf.fz_open_document_with_stream_and_dir(suffix, fz_stream, archive.this)
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymupdf\mupdf.py", line 53278, in fz_open_document_with_stream_and_dir
+    return _mupdf.fz_open_document_with_stream_and_dir(magic, stream, dir)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+pymupdf.mupdf.FzErrorFormat: code=7: no objects found
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 19, in extract_text_from_pdf
+    with fitz.open(file_path) as doc:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymupdf\__init__.py", line 3016, in __init__
+    raise FileDataError(f'Failed to open file {filename!r} as type {suffix}.') from e
+pymupdf.FileDataError: Failed to open file 'C:\\Users\\kodal\\OneDrive\\Desktop\\btech-project\\Interview\\backend\\uploads\\resumes\\e416126d-91ac-4dce-8b2d-f56361a56a0a.pdf' as type pdf.
+2026-07-10 22:13:25 [ERROR] app.services.resume_parser (resume_parser.py:140) - Error parsing resume 'C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\uploads\resumes\e416126d-91ac-4dce-8b2d-f56361a56a0a.pdf': Failed to open file 'C:\\Users\\kodal\\OneDrive\\Desktop\\btech-project\\Interview\\backend\\uploads\\resumes\\e416126d-91ac-4dce-8b2d-f56361a56a0a.pdf' as type pdf.. Reverting to fallback.
+Traceback (most recent call last):
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymupdf\__init__.py", line 3013, in __init__
+    doc = mupdf.fz_open_document_with_stream_and_dir(suffix, fz_stream, archive.this)
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymupdf\mupdf.py", line 53278, in fz_open_document_with_stream_and_dir
+    return _mupdf.fz_open_document_with_stream_and_dir(magic, stream, dir)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+pymupdf.mupdf.FzErrorFormat: code=7: no objects found
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 96, in parse_resume
+    raw_text = extract_text(file_path)
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 49, in extract_text
+    return extract_text_from_pdf(file_path)
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 25, in extract_text_from_pdf
+    raise e
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 19, in extract_text_from_pdf
+    with fitz.open(file_path) as doc:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymupdf\__init__.py", line 3016, in __init__
+    raise FileDataError(f'Failed to open file {filename!r} as type {suffix}.') from e
+pymupdf.FileDataError: Failed to open file 'C:\\Users\\kodal\\OneDrive\\Desktop\\btech-project\\Interview\\backend\\uploads\\resumes\\e416126d-91ac-4dce-8b2d-f56361a56a0a.pdf' as type pdf.
+2026-07-10 22:13:25 [INFO] app.services.resume_parser (resume_parser.py:59) - Running offline regex parser fallback...
+2026-07-10 22:13:25 [INFO] app.api.candidates (candidates.py:74) - Successfully saved candidate and resume record to DB. Candidate ID: 1
+2026-07-10 22:13:25 [INFO] httpx (_client.py:1025) - HTTP Request: POST http://testserver/api/candidates/upload-resume "HTTP/1.1 200 OK"
+2026-07-10 22:13:26 [INFO] app.api.interviews (interviews.py:30) - Creating database interview session. Candidate ID: 1, Job ID: 1
+2026-07-10 22:13:26 [INFO] app.api.interviews (interviews.py:55) - Successfully created interview record in DB. Interview ID: 1
+2026-07-10 22:13:26 [INFO] httpx (_client.py:1025) - HTTP Request: POST http://testserver/api/interviews/create "HTTP/1.1 200 OK"
+2026-07-10 22:13:26 [INFO] app.api.interviews (interviews.py:353) - Retrieving all interview sessions list
+2026-07-10 22:13:26 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/interviews "HTTP/1.1 200 OK"
+2026-07-10 22:13:26 [INFO] app.api.interviews (interviews.py:395) - Retrieving interview details for ID: 1
+2026-07-10 22:13:26 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/interviews/1 "HTTP/1.1 200 OK"
+2026-07-10 22:13:26 [INFO] app.api.interviews (interviews.py:321) - Computing interview dashboard statistics
+2026-07-10 22:13:26 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/interviews/stats "HTTP/1.1 200 OK"
+2026-07-10 22:13:26 [INFO] app.api.reports (reports.py:54) - Retrieving database report for Interview ID: 1
+2026-07-10 22:13:26 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/reports/interview/1 "HTTP/1.1 200 OK"
+2026-07-10 22:13:26 [INFO] app.api.reports (reports.py:101) - Retrieving database report for Report ID: 1
+2026-07-10 22:13:26 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/reports/1 "HTTP/1.1 200 OK"
+2026-07-10 22:13:26 [INFO] app.api.reports (reports.py:148) - Report download requested for Report ID: 1
+2026-07-10 22:13:26 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/reports/1/download "HTTP/1.1 200 OK"
+2026-07-10 22:14:13 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-10 22:14:13 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-10 22:14:15 [INFO] app.api.candidates (candidates.py:102) - Listing all database candidates
+2026-07-10 22:14:15 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/candidates "HTTP/1.1 200 OK"
+2026-07-10 22:14:15 [INFO] app.api.candidates (candidates.py:125) - Retrieving candidate details for ID: 1
+2026-07-10 22:14:15 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/candidates/1 "HTTP/1.1 200 OK"
+2026-07-10 22:14:15 [INFO] app.api.candidates (candidates.py:23) - Received resume upload request for Candidate: Alice Developer, File: resume.pdf
+2026-07-10 22:14:15 [INFO] app.file_helper (file_helper.py:48) - Saving uploaded file 'resume.pdf' to './uploads\resumes\2d6eebb7-3452-4b1b-a184-bc6ba413c396.pdf'
+2026-07-10 22:14:15 [INFO] app.services.resume_parser (resume_parser.py:16) - Extracting text from PDF: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\uploads\resumes\2d6eebb7-3452-4b1b-a184-bc6ba413c396.pdf
+2026-07-10 22:14:15 [ERROR] app.services.resume_parser (resume_parser.py:24) - Error reading PDF file 'C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\uploads\resumes\2d6eebb7-3452-4b1b-a184-bc6ba413c396.pdf': Failed to open file 'C:\\Users\\kodal\\OneDrive\\Desktop\\btech-project\\Interview\\backend\\uploads\\resumes\\2d6eebb7-3452-4b1b-a184-bc6ba413c396.pdf' as type pdf.
+Traceback (most recent call last):
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymupdf\__init__.py", line 3013, in __init__
+    doc = mupdf.fz_open_document_with_stream_and_dir(suffix, fz_stream, archive.this)
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymupdf\mupdf.py", line 53278, in fz_open_document_with_stream_and_dir
+    return _mupdf.fz_open_document_with_stream_and_dir(magic, stream, dir)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+pymupdf.mupdf.FzErrorFormat: code=7: no objects found
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 19, in extract_text_from_pdf
+    with fitz.open(file_path) as doc:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymupdf\__init__.py", line 3016, in __init__
+    raise FileDataError(f'Failed to open file {filename!r} as type {suffix}.') from e
+pymupdf.FileDataError: Failed to open file 'C:\\Users\\kodal\\OneDrive\\Desktop\\btech-project\\Interview\\backend\\uploads\\resumes\\2d6eebb7-3452-4b1b-a184-bc6ba413c396.pdf' as type pdf.
+2026-07-10 22:14:15 [ERROR] app.services.resume_parser (resume_parser.py:140) - Error parsing resume 'C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\uploads\resumes\2d6eebb7-3452-4b1b-a184-bc6ba413c396.pdf': Failed to open file 'C:\\Users\\kodal\\OneDrive\\Desktop\\btech-project\\Interview\\backend\\uploads\\resumes\\2d6eebb7-3452-4b1b-a184-bc6ba413c396.pdf' as type pdf.. Reverting to fallback.
+Traceback (most recent call last):
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymupdf\__init__.py", line 3013, in __init__
+    doc = mupdf.fz_open_document_with_stream_and_dir(suffix, fz_stream, archive.this)
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymupdf\mupdf.py", line 53278, in fz_open_document_with_stream_and_dir
+    return _mupdf.fz_open_document_with_stream_and_dir(magic, stream, dir)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+pymupdf.mupdf.FzErrorFormat: code=7: no objects found
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 96, in parse_resume
+    raw_text = extract_text(file_path)
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 49, in extract_text
+    return extract_text_from_pdf(file_path)
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 25, in extract_text_from_pdf
+    raise e
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 19, in extract_text_from_pdf
+    with fitz.open(file_path) as doc:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymupdf\__init__.py", line 3016, in __init__
+    raise FileDataError(f'Failed to open file {filename!r} as type {suffix}.') from e
+pymupdf.FileDataError: Failed to open file 'C:\\Users\\kodal\\OneDrive\\Desktop\\btech-project\\Interview\\backend\\uploads\\resumes\\2d6eebb7-3452-4b1b-a184-bc6ba413c396.pdf' as type pdf.
+2026-07-10 22:14:15 [INFO] app.services.resume_parser (resume_parser.py:59) - Running offline regex parser fallback...
+2026-07-10 22:14:15 [INFO] app.api.candidates (candidates.py:74) - Successfully saved candidate and resume record to DB. Candidate ID: 1
+2026-07-10 22:14:15 [INFO] httpx (_client.py:1025) - HTTP Request: POST http://testserver/api/candidates/upload-resume "HTTP/1.1 200 OK"
+2026-07-10 22:14:15 [INFO] app.api.interviews (interviews.py:30) - Creating database interview session. Candidate ID: 1, Job ID: 1
+2026-07-10 22:14:15 [INFO] app.api.interviews (interviews.py:55) - Successfully created interview record in DB. Interview ID: 1
+2026-07-10 22:14:15 [INFO] httpx (_client.py:1025) - HTTP Request: POST http://testserver/api/interviews/create "HTTP/1.1 200 OK"
+2026-07-10 22:14:15 [INFO] app.api.interviews (interviews.py:353) - Retrieving all interview sessions list
+2026-07-10 22:14:15 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/interviews "HTTP/1.1 200 OK"
+2026-07-10 22:14:15 [INFO] app.api.interviews (interviews.py:395) - Retrieving interview details for ID: 1
+2026-07-10 22:14:15 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/interviews/1 "HTTP/1.1 200 OK"
+2026-07-10 22:14:15 [INFO] app.api.interviews (interviews.py:321) - Computing interview dashboard statistics
+2026-07-10 22:14:15 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/interviews/stats "HTTP/1.1 200 OK"
+2026-07-10 22:14:15 [INFO] app.api.reports (reports.py:54) - Retrieving database report for Interview ID: 1
+2026-07-10 22:14:15 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/reports/interview/1 "HTTP/1.1 200 OK"
+2026-07-10 22:14:15 [INFO] app.api.reports (reports.py:101) - Retrieving database report for Report ID: 1
+2026-07-10 22:14:15 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/reports/1 "HTTP/1.1 200 OK"
+2026-07-10 22:14:15 [INFO] app.api.reports (reports.py:148) - Report download requested for Report ID: 1
+2026-07-10 22:14:15 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/reports/1/download "HTTP/1.1 200 OK"
+2026-07-11 09:20:16 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 09:20:16 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-11 09:32:05 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 09:32:05 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-11 09:34:23 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 09:34:23 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-11 09:37:36 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 09:37:36 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-11 09:38:35 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 09:38:35 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-11 09:40:15 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 09:40:15 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-11 09:40:40 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 09:40:40 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-11 09:40:55 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 09:40:55 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-11 09:43:04 [INFO] app.api.interviews (interviews.py:321) - Computing interview dashboard statistics
+2026-07-11 09:43:04 [INFO] app.api.interviews (interviews.py:353) - Retrieving all interview sessions list
+2026-07-11 09:53:05 [INFO] app.api.candidates (candidates.py:23) - Received resume upload request for Candidate: Kamal, File: TCS_RESUME.pdf
+2026-07-11 09:53:05 [INFO] app.file_helper (file_helper.py:48) - Saving uploaded file 'TCS_RESUME.pdf' to './uploads\resumes\2452ca3d-5df7-4ba9-bb94-e15298905d5e.pdf'
+2026-07-11 09:53:05 [INFO] app.services.resume_parser (resume_parser.py:16) - Extracting text from PDF: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\uploads\resumes\2452ca3d-5df7-4ba9-bb94-e15298905d5e.pdf
+2026-07-11 09:53:05 [INFO] app.services.resume_parser (resume_parser.py:107) - Initializing OpenAI call to parse resume raw text...
+2026-07-11 09:53:15 [INFO] httpx (_client.py:1025) - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-11 09:53:15 [INFO] app.services.resume_parser (resume_parser.py:136) - OpenAI parsed resume text successfully.
+2026-07-11 09:53:15 [INFO] app.api.candidates (candidates.py:74) - Successfully saved candidate and resume record to DB. Candidate ID: 2
+2026-07-11 12:12:47 [INFO] app.api.jobs (jobs.py:22) - Received Job Description upload request for Role: System engineer, File: TCS BPS 2024 Job Details.pdf
+2026-07-11 12:12:47 [INFO] app.file_helper (file_helper.py:48) - Saving uploaded file 'TCS BPS 2024 Job Details.pdf' to './uploads\jds\ffb69af0-b19e-4b6d-b550-bbff63094fcc.pdf'
+2026-07-11 12:12:47 [INFO] app.services.resume_parser (resume_parser.py:16) - Extracting text from PDF: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\uploads\jds\ffb69af0-b19e-4b6d-b550-bbff63094fcc.pdf
+2026-07-11 12:12:47 [INFO] app.services.jd_parser (jd_parser.py:57) - Initializing OpenAI call to parse Job Description text...
+2026-07-11 12:12:50 [INFO] httpx (_client.py:1025) - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-11 12:12:50 [INFO] app.services.jd_parser (jd_parser.py:84) - OpenAI parsed JD successfully.
+2026-07-11 12:12:50 [INFO] app.api.jobs (jobs.py:54) - Successfully saved Job Description record to DB. Job ID: 2
+2026-07-11 12:12:55 [INFO] app.api.interviews (interviews.py:30) - Creating database interview session. Candidate ID: 2, Job ID: 2
+2026-07-11 12:12:55 [INFO] app.api.interviews (interviews.py:55) - Successfully created interview record in DB. Interview ID: 2
+2026-07-11 12:12:56 [INFO] app.api.interviews (interviews.py:395) - Retrieving interview details for ID: 2
+2026-07-11 12:12:56 [INFO] app.api.interviews (interviews.py:395) - Retrieving interview details for ID: 2
+2026-07-11 12:16:32 [INFO] app.api.interviews (interviews.py:83) - Received audio upload request for Interview: 2, File: interview_audio.webm
+2026-07-11 12:16:32 [INFO] app.file_helper (file_helper.py:48) - Saving uploaded file 'interview_audio.webm' to './uploads\audio\c3745860-1e91-4d85-a8d1-c6a0462066f4.webm'
+2026-07-11 12:16:32 [INFO] app.api.interviews (interviews.py:101) - Successfully updated audio path for Interview ID 2
+2026-07-11 12:16:45 [INFO] app.api.interviews (interviews.py:261) - Triggered transcription for Interview: 2
+2026-07-11 12:16:45 [INFO] app.api.interviews (interviews.py:121) - [Background] Starting transcription pipeline for Interview ID: 2
+2026-07-11 12:16:45 [INFO] app.services.whisper_service (whisper_service.py:13) - Transcribing audio file: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\uploads\audio\c3745860-1e91-4d85-a8d1-c6a0462066f4.webm
+2026-07-11 12:16:45 [INFO] app.services.whisper_service (whisper_service.py:44) - Initializing OpenAI API client for audio transcription...
+2026-07-11 12:16:56 [INFO] httpx (_client.py:1025) - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2026-07-11 12:16:56 [INFO] app.services.whisper_service (whisper_service.py:54) - OpenAI Whisper audio transcription completed successfully.
+2026-07-11 12:16:56 [INFO] app.services.diarization_service (diarization_service.py:11) - Initializing text speaker diarization parser...
+2026-07-11 12:16:56 [WARNING] app.services.diarization_service (diarization_service.py:59) - No Interviewer/Candidate tags detected in raw transcript. Reverting to single segment fallback.
+2026-07-11 12:16:56 [INFO] app.services.diarization_service (diarization_service.py:66) - Diarization complete. Generated 1 dialogue segments.
+2026-07-11 12:16:56 [INFO] app.services.qa_extractor (qa_extractor.py:14) - Initializing Question-Answer extraction analysis...
+2026-07-11 12:16:56 [INFO] app.services.qa_extractor (qa_extractor.py:66) - Initializing OpenAI API client for QA extraction...
+2026-07-11 12:17:04 [INFO] httpx (_client.py:1025) - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-11 12:17:05 [INFO] app.services.qa_extractor (qa_extractor.py:99) - OpenAI QA extraction complete. Isolated 1 exchanges.
+2026-07-11 12:17:05 [INFO] app.api.interviews (interviews.py:172) - [Background] Successfully completed transcription for Interview ID: 2
+2026-07-11 12:17:05 [INFO] app.api.interviews (interviews.py:395) - Retrieving interview details for ID: 2
+2026-07-11 12:17:05 [INFO] app.api.interviews (interviews.py:395) - Retrieving interview details for ID: 2
+2026-07-11 12:17:05 [INFO] app.api.interviews (interviews.py:293) - Triggered analysis for Interview: 2
+2026-07-11 12:17:05 [INFO] app.api.interviews (interviews.py:185) - [Background] Starting evaluation report pipeline for Interview ID: 2
+2026-07-11 12:17:05 [INFO] app.services.report_generator (report_generator.py:14) - Initializing candidate interview evaluation analysis...
+2026-07-11 12:17:05 [INFO] app.services.report_generator (report_generator.py:54) - Initializing OpenAI API client for evaluation analysis...
+2026-07-11 12:17:09 [INFO] httpx (_client.py:1025) - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-11 12:17:09 [INFO] app.services.report_generator (report_generator.py:94) - OpenAI candidate evaluation analysis completed successfully.
+2026-07-11 12:17:09 [INFO] app.api.interviews (interviews.py:244) - [Background] Successfully completed evaluation report for Interview ID: 2
+2026-07-11 12:17:09 [INFO] app.api.interviews (interviews.py:395) - Retrieving interview details for ID: 2
+2026-07-11 12:17:09 [INFO] app.api.interviews (interviews.py:293) - Triggered analysis for Interview: 2
+2026-07-11 12:17:09 [INFO] app.api.interviews (interviews.py:185) - [Background] Starting evaluation report pipeline for Interview ID: 2
+2026-07-11 12:17:09 [INFO] app.services.report_generator (report_generator.py:14) - Initializing candidate interview evaluation analysis...
+2026-07-11 12:17:09 [INFO] app.services.report_generator (report_generator.py:54) - Initializing OpenAI API client for evaluation analysis...
+2026-07-11 12:17:13 [INFO] httpx (_client.py:1025) - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-11 12:17:13 [INFO] app.services.report_generator (report_generator.py:94) - OpenAI candidate evaluation analysis completed successfully.
+2026-07-11 12:17:13 [INFO] app.api.interviews (interviews.py:244) - [Background] Successfully completed evaluation report for Interview ID: 2
+2026-07-11 12:17:13 [INFO] app.api.interviews (interviews.py:395) - Retrieving interview details for ID: 2
+2026-07-11 12:17:13 [INFO] app.api.reports (reports.py:54) - Retrieving database report for Interview ID: 2
+2026-07-11 12:17:13 [INFO] app.api.interviews (interviews.py:395) - Retrieving interview details for ID: 2
+2026-07-11 12:17:13 [INFO] app.api.reports (reports.py:54) - Retrieving database report for Interview ID: 2
+2026-07-11 12:17:14 [INFO] app.api.interviews (interviews.py:395) - Retrieving interview details for ID: 2
+2026-07-11 12:17:14 [INFO] app.api.interviews (interviews.py:395) - Retrieving interview details for ID: 2
+2026-07-11 12:17:14 [INFO] app.api.interviews (interviews.py:395) - Retrieving interview details for ID: 2
+2026-07-11 12:17:14 [INFO] app.api.interviews (interviews.py:395) - Retrieving interview details for ID: 2
+2026-07-11 12:17:14 [INFO] app.api.interviews (interviews.py:395) - Retrieving interview details for ID: 2
+2026-07-11 12:19:00 [INFO] app.api.interviews (interviews.py:321) - Computing interview dashboard statistics
+2026-07-11 12:19:00 [INFO] app.api.interviews (interviews.py:321) - Computing interview dashboard statistics
+2026-07-11 12:19:00 [INFO] app.api.interviews (interviews.py:353) - Retrieving all interview sessions list
+2026-07-11 12:19:00 [INFO] app.api.interviews (interviews.py:353) - Retrieving all interview sessions list
+2026-07-11 12:19:05 [INFO] app.api.reports (reports.py:54) - Retrieving database report for Interview ID: 2
+2026-07-11 12:19:05 [INFO] app.api.reports (reports.py:54) - Retrieving database report for Interview ID: 2
+2026-07-11 12:19:10 [INFO] app.api.reports (reports.py:148) - Report download requested for Report ID: 2
+2026-07-11 12:20:41 [INFO] app.api.interviews (interviews.py:321) - Computing interview dashboard statistics
+2026-07-11 12:20:41 [INFO] app.api.interviews (interviews.py:353) - Retrieving all interview sessions list
+2026-07-11 12:20:53 [INFO] app.api.reports (reports.py:20) - Listing all generated database reports
+2026-07-11 12:20:53 [INFO] app.api.reports (reports.py:20) - Listing all generated database reports
+2026-07-11 12:21:06 [INFO] app.api.interviews (interviews.py:353) - Retrieving all interview sessions list
+2026-07-11 12:21:06 [INFO] app.api.interviews (interviews.py:353) - Retrieving all interview sessions list
+2026-07-11 12:21:33 [INFO] app.api.reports (reports.py:20) - Listing all generated database reports
+2026-07-11 12:21:33 [INFO] app.api.reports (reports.py:20) - Listing all generated database reports
+2026-07-11 12:21:49 [INFO] app.api.interviews (interviews.py:353) - Retrieving all interview sessions list
+2026-07-11 12:21:49 [INFO] app.api.interviews (interviews.py:353) - Retrieving all interview sessions list
+2026-07-11 12:22:18 [INFO] app.api.reports (reports.py:20) - Listing all generated database reports
+2026-07-11 12:22:33 [INFO] app.api.interviews (interviews.py:353) - Retrieving all interview sessions list
+2026-07-11 12:23:02 [INFO] app.api.interviews (interviews.py:321) - Computing interview dashboard statistics
+2026-07-11 12:23:02 [INFO] app.api.interviews (interviews.py:321) - Computing interview dashboard statistics
+2026-07-11 12:23:02 [INFO] app.api.interviews (interviews.py:353) - Retrieving all interview sessions list
+2026-07-11 12:23:02 [INFO] app.api.interviews (interviews.py:353) - Retrieving all interview sessions list
+2026-07-11 12:23:29 [INFO] app.api.reports (reports.py:20) - Listing all generated database reports
+2026-07-11 12:23:42 [INFO] app.api.interviews (interviews.py:353) - Retrieving all interview sessions list
+2026-07-11 12:24:20 [INFO] app.api.reports (reports.py:20) - Listing all generated database reports
+2026-07-11 12:24:20 [INFO] app.api.reports (reports.py:20) - Listing all generated database reports
+2026-07-11 18:06:55 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 18:06:55 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-11 18:17:28 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 18:17:28 [INFO] app.database.connection (connection.py:13) - Initializing database engine with URL schema (hiding credentials)...
+2026-07-11 18:17:28 [CRITICAL] app.database.connection (connection.py:24) - Failed to create SQLAlchemy engine: Can't load plugin: sqlalchemy.dialects:mongodb
+Traceback (most recent call last):
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\database\connection.py", line 14, in <module>
+    engine = create_engine(
+        SQLALCHEMY_DATABASE_URL,
+        # pool_pre_ping enables checking connection health on each checkout to prevent stale socket errors
+        pool_pre_ping=True
+    )
+  File "<string>", line 2, in create_engine
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\sqlalchemy\util\deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\sqlalchemy\engine\create.py", line 568, in create_engine
+    entrypoint = u._get_entrypoint()
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\sqlalchemy\engine\url.py", line 772, in _get_entrypoint
+    cls = registry.load(name)
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 345, in load
+    raise exc.NoSuchModuleError(
+        "Can't load plugin: %s:%s" % (self.group, name)
+    )
+sqlalchemy.exc.NoSuchModuleError: Can't load plugin: sqlalchemy.dialects:mongodb
+2026-07-11 18:17:46 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 18:17:57 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 18:18:09 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 18:18:26 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 18:18:37 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 18:18:45 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 18:19:24 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 18:20:25 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 18:20:39 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 18:20:52 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 18:21:01 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 18:21:24 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 18:21:38 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 18:21:39 [INFO] app.database.connection (connection.py:8) - Initializing MongoDB connection client...
+2026-07-11 18:21:39 [INFO] app.database.connection (connection.py:17) - Connected to MongoDB database: interviewsense
+2026-07-11 18:22:00 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 18:22:00 [INFO] app.database.connection (connection.py:8) - Initializing MongoDB connection client...
+2026-07-11 18:22:00 [INFO] app.database.connection (connection.py:17) - Connected to MongoDB database: interviewsense
+2026-07-11 18:22:15 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 18:22:15 [INFO] app.database.connection (connection.py:8) - Initializing MongoDB connection client...
+2026-07-11 18:22:15 [INFO] app.database.connection (connection.py:17) - Connected to MongoDB database: interviewsense
+2026-07-11 18:22:49 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 18:22:49 [INFO] app.database.connection (connection.py:8) - Initializing MongoDB connection client...
+2026-07-11 18:22:50 [INFO] app.database.connection (connection.py:17) - Connected to MongoDB database: interviewsense
+2026-07-11 18:23:08 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 18:23:08 [INFO] app.database.connection (connection.py:8) - Initializing MongoDB connection client...
+2026-07-11 18:23:08 [INFO] app.database.connection (connection.py:17) - Connected to MongoDB database: interviewsense
+2026-07-11 18:23:14 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 18:23:14 [INFO] app.database.connection (connection.py:8) - Initializing MongoDB connection client...
+2026-07-11 18:23:14 [INFO] app.database.connection (connection.py:17) - Connected to MongoDB database: interviewsense
+2026-07-11 18:23:16 [INFO] app.api.candidates (candidates.py:100) - Listing all database candidates
+2026-07-11 18:23:16 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/candidates "HTTP/1.1 200 OK"
+2026-07-11 18:23:16 [INFO] app.api.candidates (candidates.py:124) - Retrieving candidate details for ID: 2
+2026-07-11 18:23:16 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/candidates/2 "HTTP/1.1 200 OK"
+2026-07-11 18:23:16 [INFO] app.api.candidates (candidates.py:21) - Received resume upload request for Candidate: Alice Developer, File: resume.pdf
+2026-07-11 18:23:16 [INFO] app.file_helper (file_helper.py:48) - Saving uploaded file 'resume.pdf' to './uploads\resumes\1db0344b-c388-4921-a2ed-dee24539b1d6.pdf'
+2026-07-11 18:23:16 [INFO] app.services.resume_parser (resume_parser.py:16) - Extracting text from PDF: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\uploads\resumes\1db0344b-c388-4921-a2ed-dee24539b1d6.pdf
+2026-07-11 18:23:16 [ERROR] app.services.resume_parser (resume_parser.py:24) - Error reading PDF file 'C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\uploads\resumes\1db0344b-c388-4921-a2ed-dee24539b1d6.pdf': Failed to open file 'C:\\Users\\kodal\\OneDrive\\Desktop\\btech-project\\Interview\\backend\\uploads\\resumes\\1db0344b-c388-4921-a2ed-dee24539b1d6.pdf' as type pdf.
+Traceback (most recent call last):
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymupdf\__init__.py", line 3013, in __init__
+    doc = mupdf.fz_open_document_with_stream_and_dir(suffix, fz_stream, archive.this)
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymupdf\mupdf.py", line 53278, in fz_open_document_with_stream_and_dir
+    return _mupdf.fz_open_document_with_stream_and_dir(magic, stream, dir)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+pymupdf.mupdf.FzErrorFormat: code=7: no objects found
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 19, in extract_text_from_pdf
+    with fitz.open(file_path) as doc:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymupdf\__init__.py", line 3016, in __init__
+    raise FileDataError(f'Failed to open file {filename!r} as type {suffix}.') from e
+pymupdf.FileDataError: Failed to open file 'C:\\Users\\kodal\\OneDrive\\Desktop\\btech-project\\Interview\\backend\\uploads\\resumes\\1db0344b-c388-4921-a2ed-dee24539b1d6.pdf' as type pdf.
+2026-07-11 18:23:16 [ERROR] app.services.resume_parser (resume_parser.py:140) - Error parsing resume 'C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\uploads\resumes\1db0344b-c388-4921-a2ed-dee24539b1d6.pdf': Failed to open file 'C:\\Users\\kodal\\OneDrive\\Desktop\\btech-project\\Interview\\backend\\uploads\\resumes\\1db0344b-c388-4921-a2ed-dee24539b1d6.pdf' as type pdf.. Reverting to fallback.
+Traceback (most recent call last):
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymupdf\__init__.py", line 3013, in __init__
+    doc = mupdf.fz_open_document_with_stream_and_dir(suffix, fz_stream, archive.this)
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymupdf\mupdf.py", line 53278, in fz_open_document_with_stream_and_dir
+    return _mupdf.fz_open_document_with_stream_and_dir(magic, stream, dir)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+pymupdf.mupdf.FzErrorFormat: code=7: no objects found
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 96, in parse_resume
+    raw_text = extract_text(file_path)
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 49, in extract_text
+    return extract_text_from_pdf(file_path)
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 25, in extract_text_from_pdf
+    raise e
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 19, in extract_text_from_pdf
+    with fitz.open(file_path) as doc:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymupdf\__init__.py", line 3016, in __init__
+    raise FileDataError(f'Failed to open file {filename!r} as type {suffix}.') from e
+pymupdf.FileDataError: Failed to open file 'C:\\Users\\kodal\\OneDrive\\Desktop\\btech-project\\Interview\\backend\\uploads\\resumes\\1db0344b-c388-4921-a2ed-dee24539b1d6.pdf' as type pdf.
+2026-07-11 18:23:16 [INFO] app.services.resume_parser (resume_parser.py:59) - Running offline regex parser fallback...
+2026-07-11 18:23:16 [INFO] app.api.candidates (candidates.py:73) - Successfully saved candidate and resume record to DB. Candidate ID: 1
+2026-07-11 18:23:16 [INFO] httpx (_client.py:1025) - HTTP Request: POST http://testserver/api/candidates/upload-resume "HTTP/1.1 200 OK"
+2026-07-11 18:23:16 [INFO] app.api.interviews (interviews.py:24) - Creating database interview session. Candidate ID: 1, Job ID: 1
+2026-07-11 18:23:16 [INFO] app.api.interviews (interviews.py:49) - Successfully created interview record in DB. Interview ID: 1
+2026-07-11 18:23:16 [INFO] httpx (_client.py:1025) - HTTP Request: POST http://testserver/api/interviews/create "HTTP/1.1 200 OK"
+2026-07-11 18:23:16 [INFO] app.api.interviews (interviews.py:343) - Retrieving all interview sessions list
+2026-07-11 18:23:16 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/interviews "HTTP/1.1 200 OK"
+2026-07-11 18:23:16 [INFO] app.api.interviews (interviews.py:389) - Retrieving interview details for ID: 1
+2026-07-11 18:23:16 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/interviews/1 "HTTP/1.1 200 OK"
+2026-07-11 18:23:16 [INFO] app.api.interviews (interviews.py:304) - Computing interview dashboard statistics
+2026-07-11 18:23:16 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/interviews/stats "HTTP/1.1 200 OK"
+2026-07-11 18:23:16 [INFO] app.api.reports (reports.py:51) - Retrieving database report for Interview ID: 1
+2026-07-11 18:23:16 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/reports/interview/1 "HTTP/1.1 200 OK"
+2026-07-11 18:23:16 [INFO] app.api.reports (reports.py:101) - Retrieving database report for Report ID: 1
+2026-07-11 18:23:16 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/reports/1 "HTTP/1.1 200 OK"
+2026-07-11 18:23:16 [INFO] app.api.reports (reports.py:148) - Report download requested for Report ID: 1
+2026-07-11 18:23:16 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/reports/1/download "HTTP/1.1 200 OK"
+2026-07-11 18:28:06 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 18:28:06 [INFO] app.database.connection (connection.py:8) - Initializing MongoDB connection client...
+2026-07-11 18:28:07 [CRITICAL] app.database.connection (connection.py:19) - Failed to create MongoDB client connection: No default database name defined or provided.
+Traceback (most recent call last):
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\database\connection.py", line 13, in <module>
+    db = client.get_default_database()
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1507, in get_default_database
+    raise ConfigurationError("No default database name defined or provided.")
+pymongo.errors.ConfigurationError: No default database name defined or provided.
+2026-07-11 18:31:23 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 18:31:24 [INFO] app.database.connection (connection.py:8) - Initializing MongoDB connection client...
+2026-07-11 18:31:24 [CRITICAL] app.database.connection (connection.py:19) - Failed to create MongoDB client connection: No default database name defined or provided.
+Traceback (most recent call last):
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\database\connection.py", line 13, in <module>
+    db = client.get_default_database()
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1507, in get_default_database
+    raise ConfigurationError("No default database name defined or provided.")
+pymongo.errors.ConfigurationError: No default database name defined or provided.
+2026-07-11 18:31:56 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 18:31:56 [INFO] app.database.connection (connection.py:8) - Initializing MongoDB connection client...
+2026-07-11 18:31:56 [INFO] app.database.connection (connection.py:18) - Connected to MongoDB database: interviewsense
+2026-07-11 18:32:12 [INFO] app.init (logger.py:44) - Logging initialized. Log file path: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\logs\app.log
+2026-07-11 18:32:12 [INFO] app.database.connection (connection.py:8) - Initializing MongoDB connection client...
+2026-07-11 18:32:15 [INFO] app.database.connection (connection.py:18) - Connected to MongoDB database: interviewsense
+2026-07-11 18:32:17 [INFO] app.api.candidates (candidates.py:100) - Listing all database candidates
+2026-07-11 18:32:17 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/candidates "HTTP/1.1 200 OK"
+2026-07-11 18:32:17 [INFO] app.api.candidates (candidates.py:124) - Retrieving candidate details for ID: 2
+2026-07-11 18:32:17 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/candidates/2 "HTTP/1.1 200 OK"
+2026-07-11 18:32:17 [INFO] app.api.candidates (candidates.py:21) - Received resume upload request for Candidate: Alice Developer, File: resume.pdf
+2026-07-11 18:32:17 [INFO] app.file_helper (file_helper.py:48) - Saving uploaded file 'resume.pdf' to './uploads\resumes\e269024b-982b-4002-a11c-0e6ed0a3a502.pdf'
+2026-07-11 18:32:17 [INFO] app.services.resume_parser (resume_parser.py:16) - Extracting text from PDF: C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\uploads\resumes\e269024b-982b-4002-a11c-0e6ed0a3a502.pdf
+2026-07-11 18:32:17 [ERROR] app.services.resume_parser (resume_parser.py:24) - Error reading PDF file 'C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\uploads\resumes\e269024b-982b-4002-a11c-0e6ed0a3a502.pdf': Failed to open file 'C:\\Users\\kodal\\OneDrive\\Desktop\\btech-project\\Interview\\backend\\uploads\\resumes\\e269024b-982b-4002-a11c-0e6ed0a3a502.pdf' as type pdf.
+Traceback (most recent call last):
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymupdf\__init__.py", line 3013, in __init__
+    doc = mupdf.fz_open_document_with_stream_and_dir(suffix, fz_stream, archive.this)
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymupdf\mupdf.py", line 53278, in fz_open_document_with_stream_and_dir
+    return _mupdf.fz_open_document_with_stream_and_dir(magic, stream, dir)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+pymupdf.mupdf.FzErrorFormat: code=7: no objects found
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 19, in extract_text_from_pdf
+    with fitz.open(file_path) as doc:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymupdf\__init__.py", line 3016, in __init__
+    raise FileDataError(f'Failed to open file {filename!r} as type {suffix}.') from e
+pymupdf.FileDataError: Failed to open file 'C:\\Users\\kodal\\OneDrive\\Desktop\\btech-project\\Interview\\backend\\uploads\\resumes\\e269024b-982b-4002-a11c-0e6ed0a3a502.pdf' as type pdf.
+2026-07-11 18:32:17 [ERROR] app.services.resume_parser (resume_parser.py:140) - Error parsing resume 'C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\uploads\resumes\e269024b-982b-4002-a11c-0e6ed0a3a502.pdf': Failed to open file 'C:\\Users\\kodal\\OneDrive\\Desktop\\btech-project\\Interview\\backend\\uploads\\resumes\\e269024b-982b-4002-a11c-0e6ed0a3a502.pdf' as type pdf.. Reverting to fallback.
+Traceback (most recent call last):
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymupdf\__init__.py", line 3013, in __init__
+    doc = mupdf.fz_open_document_with_stream_and_dir(suffix, fz_stream, archive.this)
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymupdf\mupdf.py", line 53278, in fz_open_document_with_stream_and_dir
+    return _mupdf.fz_open_document_with_stream_and_dir(magic, stream, dir)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+pymupdf.mupdf.FzErrorFormat: code=7: no objects found
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 96, in parse_resume
+    raw_text = extract_text(file_path)
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 49, in extract_text
+    return extract_text_from_pdf(file_path)
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 25, in extract_text_from_pdf
+    raise e
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\app\services\resume_parser.py", line 19, in extract_text_from_pdf
+    with fitz.open(file_path) as doc:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\kodal\OneDrive\Desktop\btech-project\Interview\backend\venv\Lib\site-packages\pymupdf\__init__.py", line 3016, in __init__
+    raise FileDataError(f'Failed to open file {filename!r} as type {suffix}.') from e
+pymupdf.FileDataError: Failed to open file 'C:\\Users\\kodal\\OneDrive\\Desktop\\btech-project\\Interview\\backend\\uploads\\resumes\\e269024b-982b-4002-a11c-0e6ed0a3a502.pdf' as type pdf.
+2026-07-11 18:32:17 [INFO] app.services.resume_parser (resume_parser.py:59) - Running offline regex parser fallback...
+2026-07-11 18:32:17 [INFO] app.api.candidates (candidates.py:73) - Successfully saved candidate and resume record to DB. Candidate ID: 1
+2026-07-11 18:32:17 [INFO] httpx (_client.py:1025) - HTTP Request: POST http://testserver/api/candidates/upload-resume "HTTP/1.1 200 OK"
+2026-07-11 18:32:17 [INFO] app.api.interviews (interviews.py:24) - Creating database interview session. Candidate ID: 1, Job ID: 1
+2026-07-11 18:32:17 [INFO] app.api.interviews (interviews.py:49) - Successfully created interview record in DB. Interview ID: 1
+2026-07-11 18:32:17 [INFO] httpx (_client.py:1025) - HTTP Request: POST http://testserver/api/interviews/create "HTTP/1.1 200 OK"
+2026-07-11 18:32:17 [INFO] app.api.interviews (interviews.py:343) - Retrieving all interview sessions list
+2026-07-11 18:32:17 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/interviews "HTTP/1.1 200 OK"
+2026-07-11 18:32:17 [INFO] app.api.interviews (interviews.py:389) - Retrieving interview details for ID: 1
+2026-07-11 18:32:17 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/interviews/1 "HTTP/1.1 200 OK"
+2026-07-11 18:32:17 [INFO] app.api.interviews (interviews.py:304) - Computing interview dashboard statistics
+2026-07-11 18:32:17 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/interviews/stats "HTTP/1.1 200 OK"
+2026-07-11 18:32:17 [INFO] app.api.reports (reports.py:51) - Retrieving database report for Interview ID: 1
+2026-07-11 18:32:17 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/reports/interview/1 "HTTP/1.1 200 OK"
+2026-07-11 18:32:17 [INFO] app.api.reports (reports.py:101) - Retrieving database report for Report ID: 1
+2026-07-11 18:32:17 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/reports/1 "HTTP/1.1 200 OK"
+2026-07-11 18:32:17 [INFO] app.api.reports (reports.py:148) - Report download requested for Report ID: 1
+2026-07-11 18:32:17 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/reports/1/download "HTTP/1.1 200 OK"
