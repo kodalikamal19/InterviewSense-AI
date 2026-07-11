@@ -673,3 +673,11 @@ pymupdf.FileDataError: Failed to open file 'C:\\Users\\kodal\\OneDrive\\Desktop\
 2026-07-11 18:32:17 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/reports/1 "HTTP/1.1 200 OK"
 2026-07-11 18:32:17 [INFO] app.api.reports (reports.py:148) - Report download requested for Report ID: 1
 2026-07-11 18:32:17 [INFO] httpx (_client.py:1025) - HTTP Request: GET http://testserver/api/reports/1/download "HTTP/1.1 200 OK"
+2026-07-11 18:33:49 [INFO] app.api.interviews (interviews.py:304) - Computing interview dashboard statistics
+2026-07-11 18:33:49 [INFO] app.api.interviews (interviews.py:304) - Computing interview dashboard statistics
+2026-07-11 18:33:49 [INFO] app.api.interviews (interviews.py:343) - Retrieving all interview sessions list
+2026-07-11 18:33:49 [INFO] app.api.interviews (interviews.py:343) - Retrieving all interview sessions list
+2026-07-11 18:33:54 [INFO] app.api.reports (reports.py:17) - Listing all generated database reports
+2026-07-11 18:33:54 [INFO] app.api.reports (reports.py:17) - Listing all generated database reports
+2026-07-11 18:33:55 [INFO] app.api.interviews (interviews.py:343) - Retrieving all interview sessions list
+2026-07-11 18:33:55 [INFO] app.api.interviews (interviews.py:343) - Retrieving all interview sessions list

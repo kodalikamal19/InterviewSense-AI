@@ -90,7 +90,7 @@ function ReportsPageContent() {
     );
   }
 
-  const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api";
+  const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || "https://interviewsense-ai.onrender.com/api";
 
   return (
     <div className="space-y-6">

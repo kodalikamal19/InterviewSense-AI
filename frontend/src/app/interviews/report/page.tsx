@@ -127,7 +127,7 @@ function ReportPageContent() {
     return "text-accent-rose";
   };
 
-  const downloadUrl = `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api"}/reports/${report.id}/download`;
+  const downloadUrl = `${process.env.NEXT_PUBLIC_API_URL || "https://interviewsense-ai.onrender.com/api"}/reports/${report.id}/download`;
 
   return (
     <div className="space-y-8 max-w-5xl mx-auto">
